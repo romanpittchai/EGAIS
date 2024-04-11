@@ -1,7 +1,7 @@
 # Request for TTN statuses from the EGAIS
 ## Basic description
 
-The script is designed to request TTN statuses in the USAIS system. Captcha bypass is performed using the captcha bypass service [rucaptcha](https://rucaptcha.com) using a ready-made module from this service.
+The script is designed to request TTN statuses in the EGAIS system. Captcha bypass is performed using the captcha bypass service [rucaptcha](https://rucaptcha.com) using a ready-made module from this service.
 
 In order to use the script, you need to download it to your PC, then install a virtual environment:
 - windows `python -m venv venv`
