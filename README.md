@@ -18,7 +18,9 @@ Update pip and install all necessary packages:
 After that, you should already have the data file(`DataFile.txt`), a sample of which will be in the repository - `DataFilExample.txt`. The format should be as follows - ttn number(`TTN-0699868064`) and fsrar number(`030000015637`). Then you can run the script and it will gradually download the captcha, send it for decryption, make a request with all this data to the EGAIS.
 
 The result will be written to a file `DataFileOut.txt`.
-You must also create an `.env` file with your access key to the service to decrypt the captcha. An example file is `.envExample`
+You must also create an `.env` file with your access key to the service to decrypt the captcha. An example file is `.envExample`.
+
+The script works for the sender's fsrar.
 
 ### Author
 

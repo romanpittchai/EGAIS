@@ -1,9 +1,12 @@
 import os
 import sys
+
 from dotenv import load_dotenv
 from twocaptcha import TwoCaptcha
-from writeFile import write_logs
+
 from constants import URL_AND_FILEPATH
+from writeFile import write_logs
+
 
 def get_solved_captcha():
     '''

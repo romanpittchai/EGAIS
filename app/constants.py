@@ -5,7 +5,9 @@ URL_AND_FILEPATH: dict = {
 
 SEARCH_PATTERN: dict = {
     "captcha_image_pattern": 'SampleCaptcha_CaptchaImage.*?src="(.*?)"',
-    "captcha_id_pattern": r"BotDetect.Init\('SampleCaptcha', '(.*?)', 'CaptchaCode'"
+    "captcha_id_pattern": (
+        r"BotDetect.Init\('SampleCaptcha', '(.*?)', 'CaptchaCode'"
+    )
 }
 
 DATA_FOR_THE_REQUEST: dict = {

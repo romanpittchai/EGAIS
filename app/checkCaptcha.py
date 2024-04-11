@@ -1,8 +1,10 @@
 import re
-from PIL import Image
 from io import BytesIO
 
-from constants import URL_AND_FILEPATH, SEARCH_PATTERN
+from PIL import Image
+
+from constants import SEARCH_PATTERN, URL_AND_FILEPATH
+
 
 def check1_get_captcha(session) -> str:
     '''
@@ -10,7 +12,7 @@ def check1_get_captcha(session) -> str:
     Капчу сохраняет в указанную папку,
     как картинку. Id капчи возвращает.
     '''
-    
+
     response = session.get(URL_AND_FILEPATH["url"], verify=False)
     response.raise_for_status()
 
@@ -23,15 +25,17 @@ def check1_get_captcha(session) -> str:
     )
     captcha_id = 'None'
     if captcha_image_match:
-        captcha_image_url = f'{URL_AND_FILEPATH["url"]}{captcha_image_match.group(1)}'
+        captcha_image_url = (
+            f'{URL_AND_FILEPATH["url"]}{captcha_image_match.group(1)}'
+        )
         captcha_id_match = re.search(
             SEARCH_PATTERN["captcha_id_pattern"],
             response_text
         )
-        
+
         if captcha_id_match:
             captcha_id = captcha_id_match.group(1)
-            
+
             # Загрузка капчи
             captcha_response = session.get(captcha_image_url, verify=False)
             captcha_image = Image.open(BytesIO(captcha_response.content))
@@ -40,6 +44,5 @@ def check1_get_captcha(session) -> str:
             print("ID капчи не найден")
     else:
         print("URL капчи не найден")
-    
-    return captcha_id
 
+    return captcha_id
