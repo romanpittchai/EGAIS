@@ -8,7 +8,10 @@ def send_request_with_captcha(
         ttn, fsrar, captcha_id,
         code_captcha, session
 ) -> str:
-    ''' Делает запрос в ЕГАИС и возвращает статус документа.'''
+    '''
+    Makes a request to the EGAIS
+    and returns the status of the document.
+    '''
 
     data = {
         'id': ttn,

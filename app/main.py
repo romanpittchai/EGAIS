@@ -7,7 +7,7 @@ from writeFile import write_file
 
 
 def main() -> None:
-    ''' Главная функция. '''
+    ''' The main function. '''
 
     with open('DataFile.txt', 'r') as file:
         while True:

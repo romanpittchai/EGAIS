@@ -1,5 +1,5 @@
 def write_file(ttn, fsrar, status) -> None:
-    ''' Записывает в файл результат запроса в ЕГАИС. '''
+    ''' Writes the result of the USAIS request to a file.'''
 
     with open('DataFileOut.txt', 'a') as file:
         line = f'TTN-{ttn} {fsrar} {status}\n'
@@ -7,8 +7,8 @@ def write_file(ttn, fsrar, status) -> None:
 
 
 def write_logs(balance) -> None:
-    ''' Записывает в файл баланс счёта. '''
+    ''' Writes the account balance to the file. '''
 
-    with open('balans.txt', 'a') as file:
-        line = f'Баланс: {balance}\n'
+    with open('balance.txt', 'a') as file:
+        line = f'Balance: {balance} rubles\n'
         file.write(line)

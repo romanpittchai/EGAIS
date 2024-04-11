@@ -10,8 +10,8 @@ from writeFile import write_logs
 
 def get_solved_captcha():
     '''
-    Отправка капчи на сервис
-    для расшифровки и возврат результата
+    Sending a captcha to the service
+    to decrypt and return the result
     (rucaptcha.com).
     '''
 

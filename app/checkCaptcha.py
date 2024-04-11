@@ -8,9 +8,9 @@ from constants import SEARCH_PATTERN, URL_AND_FILEPATH
 
 def check1_get_captcha(session) -> str:
     '''
-    Ищет капчу и id капчи.
-    Капчу сохраняет в указанную папку,
-    как картинку. Id капчи возвращает.
+    Searches for captcha and captcha id.
+    Saves the captcha to the specified folder,
+    like a picture. Returns the captcha id.
     '''
 
     response = session.get(URL_AND_FILEPATH["url"], verify=False)
@@ -18,7 +18,7 @@ def check1_get_captcha(session) -> str:
 
     response_text = response.text
 
-    # Поиск URL капчи
+    # Search for the captcha URL
     captcha_image_match = re.search(
         SEARCH_PATTERN["captcha_image_pattern"],
         response_text
@@ -36,13 +36,13 @@ def check1_get_captcha(session) -> str:
         if captcha_id_match:
             captcha_id = captcha_id_match.group(1)
 
-            # Загрузка капчи
+            # Uploading a captcha
             captcha_response = session.get(captcha_image_url, verify=False)
             captcha_image = Image.open(BytesIO(captcha_response.content))
             captcha_image.save(URL_AND_FILEPATH["filepath"])
         else:
-            print("ID капчи не найден")
+            print("Captcha ID not found")
     else:
-        print("URL капчи не найден")
+        print("The captcha URL was not found")
 
     return captcha_id
