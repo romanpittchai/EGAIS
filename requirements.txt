@@ -1,0 +1,15 @@
+2captcha-python==1.2.4
+certifi==2024.2.2
+charset-normalizer==3.3.2
+flake8==7.0.0
+flake8-isort==6.1.1
+idna==3.7
+isort==5.13.2
+mccabe==0.7.0
+pillow==10.3.0
+pkg_resources==0.0.0
+pycodestyle==2.11.1
+pyflakes==3.2.0
+python-dotenv==1.0.1
+requests==2.31.0
+urllib3==2.2.1
