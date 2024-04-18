@@ -41,8 +41,8 @@ def check1_get_captcha(session) -> str:
             captcha_image = Image.open(BytesIO(captcha_response.content))
             captcha_image.save(URL_AND_FILEPATH["filepath"])
         else:
-            print("Captcha ID not found")
+            print("!<Captcha ID not found>!")
     else:
-        print("The captcha URL was not found")
+        print("!<The captcha URL was not found>!")
 
     return captcha_id
