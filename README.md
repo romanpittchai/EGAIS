@@ -26,4 +26,4 @@ The script works for the sender's fsrar.
 
 _Bogatyrev Roman_
 
-> ***_Note:_*** _The project uses the MIT License.
+> ***_Note:_*** _The project uses the MIT License._
